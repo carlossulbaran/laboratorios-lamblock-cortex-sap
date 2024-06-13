@@ -47,6 +47,10 @@ explore: data_intelligence_ar {
   }
 }
 
+explore: produccion {
+  from: produccion
+}
+
 explore: sales_orders {
 
   join: language_map {
