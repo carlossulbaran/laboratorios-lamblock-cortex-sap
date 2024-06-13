@@ -200,7 +200,7 @@
   - name: Currency
     title: Currency
     type: field_filter
-    default_value: "{{ _user_attributes['default_value_currency_required'] }}"
+    default_value: "{{ _user_attributes['lap_lam_default_value_currency_required'] }}"
     allow_multiple_values: true
     required: false
     ui_config:
