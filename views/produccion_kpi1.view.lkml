@@ -5,10 +5,10 @@ view: produccion_kpi1 {
 
     SELECT
     ordenes AS produccion_ordenes,
-    MIN(produccion.dia_inicio_real) as fecha_de_inicio,
-    COUNT(DISTINCT produccion.operaciones) AS cantidad_de_operaciones,
-    COUNT(DISTINCT CASE WHEN (( produccion.IND ) = 'X') THEN produccion.operaciones ELSE NULL END) AS cant_de_operaciones_notificadas,
-    COUNT(DISTINCT produccion.operaciones)-COUNT(DISTINCT CASE WHEN (( produccion.IND ) = 'X') THEN produccion.operaciones ELSE NULL END) as cantida_de_operaciones_pendientes
+    MIN(dia_inicio_real) as fecha_de_inicio,
+    COUNT(DISTINCT operaciones) AS cantidad_de_operaciones,
+    COUNT(DISTINCT CASE WHEN (( IND ) = 'X') THEN operaciones ELSE NULL END) AS cant_de_operaciones_notificadas,
+    COUNT(DISTINCT operaciones)-COUNT(DISTINCT CASE WHEN (( IND ) = 'X') THEN operaciones ELSE NULL END) as cantida_de_operaciones_pendientes
 
 
     FROM `proyecto-lablam-rd.SAP_REPORTING.produccion`
