@@ -51,6 +51,10 @@ explore: produccion {
   from: produccion
 }
 
+explore: produccion_kpi1 {
+  from: produccion_kpi1
+}
+
 explore: sales_orders {
 
   join: language_map {
