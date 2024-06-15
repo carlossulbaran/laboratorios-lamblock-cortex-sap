@@ -27,7 +27,7 @@ view: produccion_kpi1 {
 
   dimension: fecha_de_inicio{
     type: date
-    sql: ${TABLE}.fecha_de_inicio ;;
+    sql: CAST(${TABLE}.fecha_de_inicio AS TIMESTAMP) ;;
   }
 
   dimension: cantida_de_operaciones_pendientes_dimension{
