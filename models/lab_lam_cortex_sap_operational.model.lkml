@@ -64,7 +64,7 @@ explore: sales_orders {
   join: language_map {
     fields: []
     type: left_outer
-    sql_on: ${language_map.looker_locale}='es_ES' ;;
+    sql_on: ${language_map.looker_locale}='{{ _user_attributes['locale'] }}' ;;
     relationship: many_to_one
   }
 
@@ -204,7 +204,7 @@ explore: sales_orders {
 
 explore: vendor_performance {
   sql_always_where: ${vendor_performance.client_mandt} = '{{ _user_attributes['lap_lam_client_id_rep'] }}'
-    and ${language_map.looker_locale}='es_ES'
+    and ${language_map.looker_locale}='{{ _user_attributes['locale'] }}'
     ;;
 
   join: language_map {
@@ -262,7 +262,7 @@ explore: materials_valuation_v2 {
 
 explore: inventory_metrics_overview {
   sql_always_where: ${inventory_metrics_overview.client_mandt} = '{{ _user_attributes['lap_lam_client_id_rep'] }}'
-    and ${language_map.looker_locale}='es_ES';;
+    and ${language_map.looker_locale}='{{ _user_attributes['locale'] }}';;
 
   join: inventory_by_plant {
     type: left_outer
@@ -283,7 +283,7 @@ explore: inventory_metrics_overview {
 
 explore: inventory_by_plant {
   sql_always_where: ${inventory_by_plant.client_mandt} = '{{ _user_attributes['lap_lam_client_id_rep'] }}'
-        and ${language_map.looker_locale}='es_ES'
+        and ${language_map.looker_locale}='{{ _user_attributes['locale'] }}'
     ;;
 
   join: language_map {
